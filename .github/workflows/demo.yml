@@ -9,3 +9,8 @@ jobs:
     steps:
       - name: Print to console
         run: echo Hello GitHub Actions!
+      - name: Print  few lines in console
+        run: |
+          echo first line
+          echo second line |
+        
