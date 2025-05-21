@@ -12,5 +12,4 @@ jobs:
       - name: Print  few lines in console
         run: |
           echo first line
-          echo second line |
-        
+          echo second line
