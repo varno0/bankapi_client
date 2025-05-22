@@ -1,17 +1,17 @@
 services:
-#  client-service:
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
-#    volumes:
-#      - /var/run/docker.sock:/var/run/docker.sock
-#    networks:
-#      - client-network
-#    ports:
-#      - "8080:8080"
-#    depends_on:
-#      - card-db
-#      - redis
+  client-service:
+   build:
+     context: .
+     dockerfile: Dockerfile
+   volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+   networks:
+     - client-network
+   ports:
+     - "8080:8080"
+   depends_on:
+     - client-db
+     - redis
   client-db:
     image: 'postgres:latest'
     environment:
@@ -29,8 +29,6 @@ services:
     networks:
       - client-network
       - card-network
-
-
 
 networks:
   client-network:
