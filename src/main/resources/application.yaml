@@ -1,3 +1,13 @@
+server:
+  port: 8080
+  sql:
+    init:
+      mode: always
+  servlet:
+    context-path: /api/v1
+jwt:
+  secret: 3bitb3ib5o23b5or23b45or2bohsf8
+  lifetime: 30m
 spring:
   application:
     name: client-service
@@ -8,11 +18,7 @@ spring:
     password: secret
     driver-class-name: org.postgresql.Driver
   jpa:
-    hibernate:
-      ddl-auto: create
     show-sql: true
   data:
     jdbc:
       dialect: org.hibernate.dialect.PostgreSQLDialect
-server:
-  port: 8080

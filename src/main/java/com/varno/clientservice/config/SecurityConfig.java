@@ -19,7 +19,8 @@ public class SecurityConfig {
                                 .authorizeHttpRequests(authorize -> authorize
                                                 .requestMatchers("/test").permitAll()
                                                 .requestMatchers("/**").authenticated())
-
+                                .csrf(Customizer.withDefaults())
+                                
 
                                 .build();
         }
