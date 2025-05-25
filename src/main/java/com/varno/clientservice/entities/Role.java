@@ -20,8 +20,8 @@ public class Role {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-}
+    public Role(String roleName) {
+        this.name = roleName;
+    }
 
-public Role(String roleName) {
-    this.name = roleName;
 }
