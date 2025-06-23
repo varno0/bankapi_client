@@ -1,14 +1,25 @@
 package com.varno.clientservice.controllers;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import com.varno.clientservice.dto.ClientDTO;
+import com.varno.clientservice.entities.Client;
+import com.varno.clientservice.service.ClientService;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/client")
+@RequestMapping("/test")
 @RequiredArgsConstructor
 public class ClientController {
 
-    
+    private final ClientService clientService;
+
+    private final ModelMapper modelMapper;
+
+    @GetMapping
+    public String test(){
+        return "test";
+    }
+
 }

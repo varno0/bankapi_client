@@ -1,16 +1,15 @@
 server:
   port: 8080
-  sql:
-    init:
-      mode: always
-  servlet:
-    context-path: /api/v1
+
 jwt:
-  secret: 3bitb3ib5o23b5or23b45or2bohsf8
-  lifetime: 30m
+  secret: 3bitb3ib5o23b5or23b45or2bohsf83rurhgejfbwkgbvk2lbfkjwjvfjhvvk sfkhjvbkwsvbqbvkjwdbviuwbvowqjdbfiwbfgwiqecbnfowufg
+  lifeTime: 1d
 spring:
   application:
     name: client-service
+  sql:
+    init:
+      mode: always
   
   datasource:
     url: jdbc:postgresql://client-db:5432/mydatabase
@@ -22,3 +21,6 @@ spring:
   data:
     jdbc:
       dialect: org.hibernate.dialect.PostgreSQLDialect
+logging:
+  level:
+    org.springframework.security: debug
