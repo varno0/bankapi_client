@@ -10,7 +10,7 @@ spring:
   sql:
     init:
       mode: always
-
+  
   datasource:
     url: jdbc:postgresql://client-db:5432/mydatabase
     username: myuser
@@ -20,7 +20,7 @@ spring:
     show-sql: true
   data:
     jdbc:
-      dialect: postgresql
+      dialect: org.hibernate.dialect.PostgreSQLDialect
 logging:
   level:
     org.springframework.security: debug

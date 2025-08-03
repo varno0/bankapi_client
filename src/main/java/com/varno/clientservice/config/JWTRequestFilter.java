@@ -28,9 +28,11 @@ public class JWTRequestFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
+
         String authHeader = request.getHeader("Authorization");
         String jwtToken = null;
         String username = null;
+
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             jwtToken = authHeader.substring(7);
             try {
@@ -48,6 +50,7 @@ public class JWTRequestFilter extends OncePerRequestFilter {
                     SimpleGrantedAuthority::new).toList());
             SecurityContextHolder.getContext().setAuthentication(token);
         }
+
         filterChain.doFilter(request, response);
     }
 }
